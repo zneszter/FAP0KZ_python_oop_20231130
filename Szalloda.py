@@ -1,4 +1,5 @@
 from Foglalas import Foglalas
+from datetime import datetime
 
 class Szalloda:
     def __init__(self, nev):
@@ -11,6 +12,11 @@ class Szalloda:
 
     def foglalas(self, szobaszam, datum):
         szoba = next((s for s in self.szobak if s.szobaszam == szobaszam), None)
+
+        if datum < datetime.now():
+            print("A dátum nem lehet a mútban")
+            return None
+
         if szoba and not self._foglalt(szoba, datum):
             foglalas = Foglalas(szoba, datum)
             self.foglalasok.append(foglalas)
