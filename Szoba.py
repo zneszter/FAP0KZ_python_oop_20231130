@@ -1,3 +1,4 @@
+from ABC import ABC, abstractmethod
 class Szoba:
     def __init__(self, szobaszam, ar):
         self.szobaszam = szobaszam
