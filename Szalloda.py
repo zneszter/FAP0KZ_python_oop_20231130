@@ -1,9 +1,13 @@
+from Foglalas import Foglalas
+
 class Szalloda:
     def __init__(self, nev):
         self.nev = nev
         self.szobak = []
         self.foglalasok = []
 
+    def szoba_hozzaadas(self, szoba):
+        self.szobak.append(szoba)
 
     def foglalas(self, szobaszam, datum):
         szoba = next((s for s in self.szobak if s.szobaszam == szobaszam), None)
@@ -18,5 +22,11 @@ class Szalloda:
             self.foglalasok.remove(foglalas)
 
     def foglalasok_listazasa(self):
+        for i, foglalas in enumerate(self.foglalasok,1):
+            print(f"Sorszáma: {i} Foglalás: {foglalas}")
+
+    def _foglalt(self, szoba, datum):
         for foglalas in self.foglalasok:
-            print(f"Foglalás: {foglalas}")
+            if foglalas.szoba == szoba and foglalas.datum == datum:
+                return True
+        return False
