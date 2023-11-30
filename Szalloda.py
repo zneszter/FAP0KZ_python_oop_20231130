@@ -16,3 +16,7 @@ class Szalloda:
     def lemondas(self, foglalas):
         if foglalas in self.foglalasok:
             self.foglalasok.remove(foglalas)
+
+    def foglalasok_listazasa(self):
+        for foglalas in self.foglalasok:
+            print(f"Foglalás: {foglalas}")
