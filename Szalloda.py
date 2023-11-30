@@ -13,11 +13,8 @@ class Szalloda:
     def foglalas(self, szobaszam, datum):
         szoba = next((s for s in self.szobak if s.szobaszam == szobaszam), None)
 
-        if datum < datetime.now():
-            print("A dátum nem lehet a mútban")
-            return None
 
-        if szoba and not self._foglalt(szoba, datum):
+        if szoba and not self._foglalt(szoba, datum) and datum > datetime.now():
             foglalas = Foglalas(szoba, datum)
             self.foglalasok.append(foglalas)
             return foglalas
