@@ -1,5 +1,5 @@
-from ABC import ABC, abstractmethod
-class Szoba:
+from abc import ABC, abstractmethod
+class Szoba(ABC):
     def __init__(self, szobaszam, ar):
         self.szobaszam = szobaszam
         self.ar = ar

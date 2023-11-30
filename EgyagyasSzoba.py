@@ -1,5 +1,6 @@
+from Szoba import Szoba
 class EgyagyasSzoba(Szoba):
-    def __init__(self, szobaszam, ar=15000, egyedi_attributum):
+    def __init__(self, szobaszam, ar, egyedi_attributum):
         super().__init__(szobaszam, ar)
         self.egyedi_attributum = egyedi_attributum
 
